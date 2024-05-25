@@ -59,8 +59,8 @@ ul{
 .search__form{
   display: flex;
   justify-content: center;
-  margin-bottom: 20px;
-  margin-top: 20px;
+  margin-bottom: 25px;
+  margin-top: 25px;
 }
 .search__button{
   margin-left: 8px;
