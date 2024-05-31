@@ -11,9 +11,6 @@ ul{
   display: flex;
 }
 
-.search-form {
-  margin-bottom: 20px;
-}
 
 .gallery {
   display: flex;
@@ -26,11 +23,13 @@ ul{
   text-align: center;
   box-sizing: border-box;
   width: 360px;
-  border: 1px solid rgb(77, 74, 74);
+
 }
 
 .gallery-item img {
-  max-width: 100%;
+  display: block;
+  height: 30vh;
+  object-fit: cover;  
 }
 
 .gallery-item p {

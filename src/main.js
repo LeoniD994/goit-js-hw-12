@@ -5,6 +5,7 @@ import 'izitoast/dist/css/iziToast.min.css';
 
 const form = document.querySelector('#search-form');
 const input = form.querySelector('input[name="searchQuery"]');
+const gallery = document.querySelector('.gallery');
 const loadMoreBtn = document.querySelector('.load-more');
 const loader = document.querySelector('.loader');
 
@@ -54,6 +55,12 @@ async function onLoadMore() {
     const data = await fetchImages(currentQuery, currentPage);
     renderImages(data.hits);
 
+    const { height: cardHeight } = gallery.firstElementChild.getBoundingClientRect();
+    window.scrollBy({
+      top: cardHeight * 2,
+      behavior: 'smooth',
+    });
+
     if (data.totalHits <= currentPage * 15) {
       loadMoreBtn.classList.add('hidden');
       iziToast.info({ title: 'End of Results', message: "We're sorry, but you've reached the end of search results." });
@@ -64,4 +71,3 @@ async function onLoadMore() {
     loader.classList.add('hidden');
   }
 }
-
