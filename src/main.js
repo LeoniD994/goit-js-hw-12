@@ -26,6 +26,7 @@ async function onSearch(event) {
 
   clearGallery();
   currentPage = 1;
+  const perPage = 15;
   loadMoreBtn.classList.add('hidden');
   loader.classList.remove('hidden');
 
@@ -60,7 +61,7 @@ async function onLoadMore() {
       top: cardHeight * 2,
       behavior: 'smooth',
     });
-
+  
     if (data.totalHits <= currentPage * 15) {
       loadMoreBtn.classList.add('hidden');
       iziToast.info({ title: 'End of Results', message: "We're sorry, but you've reached the end of search results." });
